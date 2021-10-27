@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./SASS/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Tienda de teléfonos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="./JS/main.js"></script>
+    <script defer src="./JS/modoOscuro.js"></script>
+</head>
+<body id="bodys">
+  <div class="backgroundNegro" id="backgroundNegroID">
+    <img src="" alt="">
+  </div>
+  <header class="header" id="headerModoOscuroId">
+    <a href="./index.html"><img class="imagenLogo" src="./imagenes/logoNegro.png" alt="" id="toggleLogo"></a>
+    <button onclick="cambiarBotonModoOscuro()" id="botonModoOscuro" class="estilosBotonModoOscuro">Modo Oscuro</button>
+      <img class="imagenBolsa" src="./imagenes/bolsa negra.jpg" alt="" id="toggleBolsa">
+
+    <div class="contenedorProductosCarrito" id="carritoDeCompras">
+      <h2>Carrito</h2>
+      <div class="estilostitulosCarrito">
+        <h4 id="tituloProducto">Producto</h4>
+        <h4 id="tituloPrecio">Precio</h4>
+        <h4 id="tituloCantidad">Cantidad</h4>
+    </div>
+      <div id='productosEnCarrito' class="estilosCarritoDeCompras ">
+        
+        
+      </div>
+      <div class="estilosSumaTotal" >
+        Precio Total : $ <span id="sumaTotal"></span>
+      </div>
+      <button class="estilosButtonComprar" id="buttonComprar">Comprar</button>
+      <p class="noProductosEnCarrito" id="noProductosEnCarritoID">Falta agregar Productos</p>
+      <button class="estilosCerrarCarrito" id="cerrarCarrito">Cerrar</button>
+      </div>
+    
+  </header> 
+  <main class="mainPrincipalContent" id="mainPrincipal">
+    <section class="buscador">
+        <input type="text" placeholder="Buscar por nombre" id="inputBuscador">
+        <label for=""></label>
+        <button id="botonBuscar">Buscar</button>
+    </section>
+    
+    <div class="comprarEleccion" id="comprarEleccionID">
+      <div>
+        <h2>Métodos de pago</h2>
+      </div>
+      <button class="pagarConMP" id="pagarMP" onclick="finalizarCompraMP()">Pagar con mercadoPago</button>
+      <button class="pagarConSP" id="pagarConSP">Pago con nuestro Servicio</button>
+      <div>
+        <button class="buttonCancelarPago" id="cancelarCompraEleccion">Cancelar</button>
+      </div>
+    </div> 
+    <section class="segundaSeccionMain" id="toggleModoOscuro">
+        <div class="rangoPrecios">
+            <h2>Mostrar productos por:</h2>
+            <h3>Ordenar por Precio</h3>
+            <select id="ordenarPorPrecio">
+              <option value="0">Todos</option>
+              <option value="1">Más de 50000</option>
+              <option value="2">Más de 70000</option>
+            </select>
+
+            <h3>Ordenar por marca</h3>
+            <select id="ordenarPorMarca">
+              <option value="Todos">Todos</option>
+              <option value="Samsung">Samsung</option>
+              <option value="Motorola">Motorola</option>
+            </select>          
+            <button class="aplicarPrecios" id="precioAplicado">Aplicar</button>      
+        </div>
+        <div class="productos" id="contenedorProductos">
+          
+        </div>
+    </section>
+  </main>
+  <div id="finalizarCompraMensaje">
+    
+  </div>
+
+  <div class="compra" id="compraID">
+    <h1 class="titulo">Finalizá tu compra</h1>
+    <div class="productos_finalizarCompra" id="productosFinalizar">
+        
+        
+
+    </div>
+    <div class="datosPersonales_finalizarCompra">
+        <h3>Datos Personales</h3>
+        <form onsubmit="return false" class="finalizarCompraForm">
+            <div class="datosPersonales">
+                <div class="formGroup">
+                    <label for="nombre">Nombre</label>
+                    <input class="form-control"  type="text" id="nombre" value="Juan Perez">
+                </div>
+                <div class="formGroup">
+                    <label for="email">Email</label>
+                    <input class="form-control"  type="email" id="email" value="jperez@email.com">
+                </div>
+                <div class="formGroup">
+                    <label class="" for="tel" >Telefono</label>
+                    <input class="l"  type="text" value="1553441515" id="tel">
+                </div>
+                <div class="formGroup cuotas">
+                    <label for="cuotas">Cantidad de Cuotas</label>
+                    <select class="form-control" name="" id="cuotas">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <h3>Datos de la tarjeta de Credito</h3>
+                <div class="datosTarjetaDiv" id="datosTarjetaModoOscuro" >
+                    <div class="imagenTarjeta">
+                        <img src="imagenes/credit_card.svg">
+                    </div>
+                    <div class="datosTarjeta">
+                        <label for="creditCardNumber">Número de tarjeta</label>
+                        <input class="numeroDeTarjeta" type="text" name="" id="creditCardNumber" value="1213-9011-5678-1234">
+                        <label for="creditCardName">Nombre</label>
+                        <input type="text" name="" id="creditCardName" value="PEREZ JUAN">
+                        <label for="creditCardCVC">cvc</label>
+                        <input class="inputCVC" type="text" name="" id="creditCardCVC" value="000">
+                    </div>
+                    <div class="vencimientoTarjeta">
+                            <div class="">
+                                <label for="creditCardDesde">Desde</label>
+                                <input type="text" name="" id="creditCardDesde" value="00/00">
+                            </div>
+                            <div class="">
+                                <label for="credictCardHasta">Hasta</label>
+                                <input type="text" name="" id="credictCardHasta" value="00/00">
+                            </div>
+                    </div>
+                </div>
+            <div class="buttonFinalizarCompra">
+              <div class="total">
+                <p>Total: $</p>
+                <p id="totalCompra">$108000</p>
+            </div>
+              <a href="./index.html">
+                <input class="" type="submit" value="Confirmar compra" id="buttonFinalizarCompraEvento">
+              </a> 
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

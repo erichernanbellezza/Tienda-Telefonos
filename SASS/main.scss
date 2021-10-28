@@ -946,6 +946,12 @@ body {
 
 @media screen and (max-width: 320px) {
 	body {
+		a {
+			.imagenLogo {
+				width: 120% !important;
+			}
+		}
+
 		.compra {
 			.buttonFinalizarCompra {
 				margin-left: -3.5em !important;

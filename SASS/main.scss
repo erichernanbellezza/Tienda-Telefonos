@@ -225,6 +225,7 @@ body {
 				.nombreProducto_finalizarCompra {
 					margin-right: 1em;
 					margin-top: 2em;
+					width: 5em;
 				}
 				.precioProducto_finalizarCompra {
 					margin-top: 2em;
@@ -666,9 +667,32 @@ body {
 			grid-template-columns: 1.2fr 0.8fr;
 			width: 100%;
 			margin-left: 0;
+			.nombreProducto_finalizarCompra {
+				width: 5em;
+			}
 			.datosTarjetaDiv {
-				grid-template-columns: 2fr 2fr;
-				grid-template-rows: 1fr 3.5fr;
+				grid-template-columns: 2fr 2em !important;
+				grid-template-rows: 1fr 3.5fr !important;
+				.vencimientoTarjeta {
+					display: flex;
+					flex-direction: column;
+					margin-left: -5em !important;
+					input {
+						width: 5em !important;
+					}
+					label {
+						width: 5em !important;
+					}
+					.inputCVC {
+						width: 100%;
+					}
+				}
+				label {
+					width: fit-content;
+				}
+				input {
+					width: fit-content !important;
+				}
 			}
 			.total {
 				margin-left: -0.5em;
@@ -766,6 +790,47 @@ body {
 
 @media screen and (max-width: 425px) {
 	body {
+		header {
+			width: 120vw;
+			.imagenLogo {
+				width: 10em !important;
+			}
+		}
+		.compra {
+			overflow: hidden;
+			display: none;
+			grid-template-columns: 1fr;
+			grid-template-rows: 0.3fr auto auto;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas:
+				"titulo"
+				"productos_finalizarCompra"
+				"datosPersonales_finalizarCompra";
+			.titulo {
+				grid-area: titulo;
+				margin-left: -2.5em;
+			}
+
+			.productos_finalizarCompra {
+				grid-area: productos_finalizarCompra;
+				overflow: hidden;
+			}
+
+			.datosPersonales_finalizarCompra {
+				grid-area: datosPersonales_finalizarCompra;
+				margin-left: 1.7em;
+				overflow: hidden;
+				.buttonFinalizarCompra {
+					a {
+						input {
+							margin-left: 6em;
+						}
+					}
+				}
+			}
+		}
+
 		.comprarEleccion {
 			display: none;
 			background: rgb(224, 220, 220);
@@ -881,6 +946,27 @@ body {
 
 @media screen and (max-width: 320px) {
 	body {
+		.compra {
+			.buttonFinalizarCompra {
+				margin-left: -3.5em !important;
+			}
+			.datosTarjetaDiv {
+				grid-template-columns: 1fr !important;
+				grid-template-rows: 0.3fr 1.7fr4.5r 1fr !important;
+				gap: 0px 0 !important;
+				grid-template-areas:
+					"imagenTarjeta"
+					"datosTarjeta"
+					"vencimientoTarjeta" !important;
+				.vencimientoTarjeta {
+					margin-top: 1em !important;
+					margin-left: 0 !important;
+				}
+				.total {
+					margin-left: 5em !important;
+				}
+			}
+		}
 		.comprarEleccion {
 			display: none;
 			background: rgb(224, 220, 220);

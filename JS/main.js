@@ -217,6 +217,7 @@ buscador.addEventListener('input', () => {
     
         buttonComprarClickeado.addEventListener('click', () => {
 
+            // esto despliega un texto diciendo que faltan productos en el carrito si está vacío y no permite pasar a la sección de elegir el modo de pago 
             if (carrito.length <= 0) { 
                 noProductosEnCarritoID.classList.add('mostrarInline')
 
@@ -235,7 +236,7 @@ buscador.addEventListener('input', () => {
         });
         
     }
-   
+
     eleccionModoDePago();
 
 
@@ -352,7 +353,7 @@ const pagarConSP = document.getElementById('pagarConSP');
 
 
 
-//Esta función sirve para hacer la petición a MercadoPago
+//Esta función sirve para hacer la petición a MercadoPago y se incluyen los productos del carrito, cuando se completa la compra se vacía el carrito y el localStorage
 const finalizarCompraMP = () => {
 
     if(carrito.length >= 1) { 

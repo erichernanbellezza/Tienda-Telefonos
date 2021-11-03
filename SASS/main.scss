@@ -108,9 +108,39 @@
 	z-index: 9998;
 	background: black;
 	width: 100%;
-	min-height: 146%;
+	min-height: 186%;
 	opacity: 0.7;
 	position: absolute;
+}
+
+.formularioIncorrecto {
+	border: 2px solid red;
+	border-radius: 5px;
+}
+
+.formularioCorrecto {
+	border: 2px solid rgb(49, 190, 49);
+	border-radius: 5px;
+}
+
+.errorInput {
+	display: none;
+	margin-bottom: 1em;
+	margin-top: -0.3em;
+}
+
+.mostrarError {
+	display: flex !important;
+}
+
+.mensajeErrorCompraEstilo {
+	background: rgb(228, 89, 89);
+	width: fit-content;
+	padding: 1em;
+	font-weight: 700;
+	border-radius: 5px;
+	margin-left: 24%;
+	display: none;
 }
 
 body {
@@ -569,7 +599,7 @@ body {
 @media screen and (max-width: 1440px) {
 	body {
 		.backgroundNegro {
-			min-height: 204%;
+			min-height: 220%;
 		}
 		.header {
 			.contenedorProductosCarrito {
@@ -606,7 +636,7 @@ body {
 @media screen and (max-width: 1024px) {
 	body {
 		.backgroundNegro {
-			min-height: 320%;
+			min-height: 370%;
 		}
 		.compra {
 			width: 95%;
@@ -739,7 +769,7 @@ body {
 			}
 		}
 		.backgroundNegro {
-			min-height: 280%;
+			min-height: 323%;
 		}
 		.header {
 			a {
@@ -880,7 +910,7 @@ body {
 			margin-left: 30%;
 		}
 		.backgroundNegro {
-			min-height: 583%;
+			min-height: 713%;
 		}
 		width: 100%;
 		.header {

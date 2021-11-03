@@ -75,5 +75,26 @@
     "nombre": "Moto Edge 20 Pro", 
     "precio": 81900, 
     "img": "./imagenes/motoedge20pro.png"
+    },
+    {
+    "id": 12,
+    "marca": "Motorola",
+    "nombre": "Moto G9 Plus",
+    "precio": 110000,
+    "img": "/imagenes/motoG9plus.jpg"   
+    },
+    {
+    "id": 13,
+    "marca": "Motorola",
+    "nombre": "Moto E7 ",
+    "precio": 80000,
+    "img": "/imagenes/motoe7.jpg"
+    },
+    {
+    "id": 14,
+    "marca": "Motorola",
+    "nombre": "Motorola One Fusion",
+    "precio": 130000,
+    "img": "/imagenes/motorola one fusion.png"
     }
 ]

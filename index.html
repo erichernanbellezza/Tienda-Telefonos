@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="./JS/main.js"></script>
     <script defer src="./JS/modoOscuro.js"></script>
+    <script defer src="./JS/validacionFormulario.js"></script>
 </head>
 <body id="bodys">
   <div class="backgroundNegro" id="backgroundNegroID">
@@ -93,19 +94,28 @@
     </div>
     <div class="datosPersonales_finalizarCompra">
         <h3>Datos Personales</h3>
-        <form onsubmit="return false" class="finalizarCompraForm">
+        <form onsubmit="return false" class="finalizarCompraForm" id="formulario">
             <div class="datosPersonales">
                 <div class="formGroup">
+                  <div id="grupo-nombre">
                     <label for="nombre">Nombre</label>
-                    <input class="form-control"  type="text" id="nombre" value="Juan Perez">
+                    <input class="form-control"  type="text" id="nombre" value="Juan Perez" name="nombre">
+                    <p class="errorInput" id="">El nombre puede contener de 3 a 40 letras, no se admiten caracteres especiales ($#%&/=).</p>
+                  </div>
                 </div>
                 <div class="formGroup">
+                  <div id="grupo-email">
                     <label for="email">Email</label>
-                    <input class="form-control"  type="email" id="email" value="jperez@email.com">
+                    <input class="form-control" type="email" id="email" value="jperez@email.com" name="correo">
+                    <p class="errorInput" id="">Solo es válido el formato:  nombreEmail@hotmail/gmail.com</p>
+                  </div>
                 </div>
                 <div class="formGroup">
-                    <label class="" for="tel" >Telefono</label>
-                    <input class="l"  type="text" value="1553441515" id="tel">
+                  <div id="grupo-telefono">
+                    <label class="" for="tel">Telefono</label>
+                    <input class="l"  type="text" value="1553441515" id="telefono" name="telefono">
+                    <p class="errorInput" id="">Deben ser 7 a 14 numeros</p>
+                  </div>
                 </div>
                 <div class="formGroup cuotas">
                     <label for="cuotas">Cantidad de Cuotas</label>
@@ -146,6 +156,7 @@
                 <p>Total: $</p>
                 <p id="totalCompra">$108000</p>
             </div>
+            <p class="mensajeErrorCompraEstilo" id="mensajeErrorCompra">Por favor llena los datos correctamente</p>
               <a href="./index.html">
                 <input class="" type="submit" value="Confirmar compra" id="buttonFinalizarCompraEvento">
               </a> 

@@ -320,39 +320,6 @@ const pagarConSP = document.getElementById('pagarConSP');
     };
 
 
-    // Si se finaliza la compra con el método de la página vuelve el carrito a un array vacío y lo aplica al local storage , además de mostrar un mensaje con los datos ingresados vía el formulario.
-
-    buttonFinalizarCompraEvento = document.getElementById('buttonFinalizarCompraEvento');
-    finalizarCompraMensaje = document.getElementById('finalizarCompraMensaje');
-    ocultarFormCompra = document.getElementById('compraID');
-    
-    buttonFinalizarCompraEvento.addEventListener('click', () => {
-        ocultarFormCompra.classList.add('ocultar');
-        carrito = []
-        console.log(carrito);
-        guardarCarritoEnLocalStorage();
-
-        let nombre = document.getElementById('nombre').value;
-        let email = document.getElementById('email').value;
-        let creditCardNumber = document.getElementById('creditCardNumber').value;
-        let creditCardNumberLast4 = creditCardNumber.substr(15)
-        let cuotas = document.getElementById('cuotas').value.replaceAll('_', ' Cuotas de: $');
-
-        const div = document.createElement('div')
-        div.classList.add('mensajeCompra')
-    
-        div.innerHTML = `
-            <h1>¡Gracias <span class="greenColor">${nombre}</span> por elegirnos!</h1>
-            <h2>¡El pago fue realizado con éxito!</h2>
-            <p>Corroborá las instrucciones de retiro en tu correo: <span class="greenColor">${email}</span ></p>
-            <p>Pagaste $ ${totalCompra.innerHTML} en ${cuotas}</p>
-            <p>Con la tarjeta número: **** - **** - **** - ${creditCardNumberLast4}</p>
-        `
-        finalizarCompraMensaje.appendChild(div)
-    });
-
-
-
 //Esta función sirve para hacer la petición a MercadoPago y se incluyen los productos del carrito, cuando se completa la compra se vacía el carrito y el localStorage
 const finalizarCompraMP = () => {
 
